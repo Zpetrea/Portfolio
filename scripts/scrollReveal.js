@@ -3,6 +3,5 @@ export default function initScrollReveal(targets, config) {
     console.warn("ScrollReveal is not loaded.");
     return;
   }
-
   ScrollReveal().reveal(targets, config);
 }
