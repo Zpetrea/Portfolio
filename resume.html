@@ -1,40 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume - Zachary Petrea</title>
   <link rel="stylesheet" href="style.css" />
+  <title>Resume</title>
 </head>
-<body class="main">
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <nav class="navbar">
-      <ul class="navbar-list">
-        <li><a href="index.html" class="navbar-link">About</a></li>
-        <li><a href="resume.html" class="navbar-link">Resume</a></li>
-        <li><a href="portfolio.html" class="navbar-link">Portfolio</a></li>
-        <li><a href="blog.html" class="navbar-link">Blog</a></li>
-        <li><a href="contact.html" class="navbar-link">Contact</a></li>
-      </ul>
-    </nav>
-  </aside>
-
-  <!-- Main Content -->
-  <div class="main-content">
-    <header class="page-header">
-      <h1>Resume</h1>
-    </header>
-
-    <main class="container">
-      <p>You can <a href="assets/resume.pdf" target="_blank">download my resume here</a>.</p>
-    </main>
-
-    <footer class="footer">
-      <p>&copy; 2025 Zachary Petrea. All rights reserved.</p>
-    </footer>
-  </div>
-
+<body>
+  <main>
+    <aside class="sidebar">
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">About</a></li>
+          <li><a href="resume.html" class="navbar-link">Resume</a></li>
+          <li><a href="portfolio.html" class="navbar-link">Portfolio</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <article class="about active" data-page="resume">
+        <header><h2 class="h2 article-title">Resume</h2></header>
+        <section class="about-text">
+          <p>You can <a href="assets/resume.pdf">download my resume here</a>.</p>
+        </section>
+      </article>
+    </div>
+  </main>
 </body>
 </html>
+
