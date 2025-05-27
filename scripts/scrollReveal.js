@@ -1,9 +1,8 @@
-export default function initScrollReveal(targetElements, defaultProps) {
-  if (!targetElements.length) return;
+export default function initScrollReveal(targets, config) {
+  if (typeof ScrollReveal === 'undefined') {
+    console.warn("ScrollReveal is not loaded.");
+    return;
+  }
 
-  ScrollReveal({ reset: false });
-
-  targetElements.forEach(({ element, animation }) => {
-    ScrollReveal().reveal(element, Object.assign({}, defaultProps, animation));
-  });
+  ScrollReveal().reveal(targets, config);
 }
