@@ -3,7 +3,6 @@ export default function initTiltEffect() {
     console.warn("VanillaTilt is not loaded.");
     return;
   }
-
   VanillaTilt.init(document.querySelectorAll(".js-tilt"), {
     max: 4,
     speed: 400,
