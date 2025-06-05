@@ -1,0 +1,155 @@
+---
+title: "Module 6 - Widyr"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+1.Load the packages tidytext and tidyverse
+```{r}
+library(tidyverse)
+library(tidytext)
+```
+Step 1: we have loaded the necessary libraries to create tidy data sets and load the most used functions. 
+
+2.Read-in the following datasets in R (the dataset is available on Canvas).Change the name of the variables as below.
+
+```{r}
+#read in the data
+reviews <- read_csv("amazonbeauty_review.csv")
+
+```
+Step 2: We have loaded the Amazon Beauty data set into Rstudio. It is now titles reviews. 
+
+3.	Create a tidytext dataset - Tokenize by unigrams (one-word-per-row). (10 points)
+
+```{r}
+tidy <- reviews %>%
+  unnest_tokens(word, reviewText) %>% 
+  filter(!is.na(word))
+
+```
+
+Step 3: We tidy the reviews dataset, tokenize the words from the reviewText column, and filter out any NA's.
+
+4. Pre-Process Text by Removing numbers, whitespaces,  stop words, and words with less than 3 characters, etc.
+
+```{r}
+library(tm)
+
+tidy_filtered <- tidy %>%
+  filter(!word %in% stop_words$word) %>% 
+  filter(nchar(word) > 2)
+
+tidy_filtered <- tidy_filtered[-grep("\\b\\d+\\b", tidy_filtered$word), ]
+
+rows_with_numbers <- grepl("\\d+", tidy_filtered$word)
+tidy_filtered <- tidy_filtered[!rows_with_numbers, ]
+ 
+rows_with_spaces <- grepl("\\s+", tidy_filtered$word)
+tidy_filtered <- tidy_filtered[!rows_with_spaces, ]
+
+
+tidy_filtered
+
+```
+Step 4: We Pre-Process the Text by Removing all numbers, whitespaces,  stop words, and words with less than 3 characters. Now the text has been cleaned and removed of noise.
+
+ 
+5. Count the most frequently used words. (10 points)
+
+```{r}
+tidy_counts <- tidy_filtered %>%
+  count(word, sort = TRUE)
+
+tidy_counts 
+
+```
+Step 5: We have counted the most common words and sorted them in a decreasing manner.  
+ 
+ 
+6.	Load the package widyr.
+
+```{r}
+library(widyr)
+```
+
+Step 6: We load the package needed for the next step. 
+
+7. Use pairwise_count() from the widyr package to count how many times each pair of words occurs together in the reviews based on reviewerID. Explain the results.{it may take a few minutes to run this chunck of code} (20 points)
+
+```{r}
+word_pairs <- tidy_filtered %>%
+  pairwise_count(word, reviewerID, sort = TRUE)
+
+```
+
+Step 7: We filter the cleaned data by reviewer ID and sort in a decreasing manner. 
+
+visualize the results. Filter the less common pairs. Explain the graph. (10 points)
+
+```{r}
+library(igraph)
+library(ggraph)
+
+set.seed(2016)
+
+ word_pairs %>%
+   filter(n > 85) %>% 
+   graph_from_data_frame() %>%
+   ggraph(layout = "fr") +
+   geom_edge_link(aes(edge_alpha = n), edge_colour = "cyan4", show.legend = FALSE) +
+   geom_node_point(size = 1) +
+   geom_node_text(aes(label = name), repel = TRUE) +
+  theme_void()
+```
+Step 7 cont: We filter out the uncommon words and visualize the network of words associated with each other. We can see the majority of words revolve around skin. It mentions skincare routines such as day, night, dry, oily, etc. 
+
+
+8.	Use pairwise_cor() from the widyr package to calculate the correlation among words in the  tweets (filter for at least relatively common words first n() >= 10).Explain the results.{it may take a few minutes to run this chunck of code}. (20 points)
+```{r}
+word_cors <- tidy_filtered %>%
+  group_by(word) %>%
+  filter(n() >= 10) %>%
+  pairwise_cor(word, reviewerID, sort = TRUE)
+
+word_cors
+```
+Step 8: We see the correlation between words and their associated value. It mentions similarities such as coal and tar and words commonly said consecutively, such as curling, iron. The highest correlation was for benzoyl peroxide, since this is the chemicals complete name, however, it used for the treatment of skin, specifically for acne. 
+
+
+9. load the packages igraph and ggraph
+```{r}
+library (igraph)
+library (ggraph)
+```
+
+Step 9: We load the packages to graph networks. 
+
+10.	Plot networks of these correlations among words (use the ggraph package and the layout="fr"")).Explain the results. (10 points)
+```{r}
+set.seed(1234)
+
+word_cors %>%
+  filter(correlation > .5) %>%
+  graph_from_data_frame() %>%
+  ggraph(layout = "fr") +
+  geom_edge_link(aes(edge_alpha = correlation), edge_colour = "cyan4", show.legend = FALSE) +
+  geom_node_point(size = 1) +
+  geom_node_text(aes(label = name), repel = TRUE) +
+  theme_void()
+
+```
+
+Step 10: This graph visualizes the correlation table and provides links to make it easier to associate which words correlated highly with each other. 
+
+
+11. Reflect on this assignment and text networks.Provide a summary of your findings.(20 points)
+
+I really enjoyed this assignment. I had troubles with Step 7, however, I believe that I was involving too much data for the network to graph, as the code will keep running and the RAM usage would jump to 8 gb. Based on my findings, I see that reviewers cared the most about their skincare and hair. I was surprised to see medications and conditions, such as dandruff. I only expected to see products and routines. Overall, I enjoyed this exercise, however, I would like to further my knowledge in the different graphs for text, such as the pyramid.plot, etc. 

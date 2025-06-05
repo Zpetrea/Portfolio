@@ -1,0 +1,134 @@
+---
+title: "Module 6 - ngrams"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+1.Load the packages tidytext and tidyverse
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(tidytext)
+```
+
+Step 1: Packages are loaded for widely used functions and to tidy data sets. 
+
+2.	Read-in the following datasets in R (the dataset is available on Canvas). This dataset contains review and summary of beauty products on Amazon.
+
+```{r}
+#read in the data
+reviews <- read_csv("amazonbeauty_review.csv")
+
+```
+
+Step 2: The Amazon Reviews dataset is loaded into the space as reviews. 
+
+3. Describe the variables in the data set and number of observations. (10 points)
+
+Step 3: The data set has 1150 observations and 10 variables. One of the variables has the review text.
+
+4.	Create a tidytext dataset - Tokenize by bigrams. (20 points)
+
+```{r}
+
+
+bigrams <- reviews %>%
+  unnest_tokens(bigram, reviewText, token = "ngrams", n = 2) %>%
+  filter(!is.na(bigram))
+
+bigrams
+
+```
+
+Step 4: a tidied datset is created with reviewText column tokenized into (2) words and filtered to remove any NA values. 
+
+5.	Separate the bigrams and preprocess the text. Filter stop-words and words less than 3 characters. (30 points)
+
+```{r}
+
+bigrams_separated <- bigrams %>%
+    separate(bigram, c("word1", "word2"), sep = " ") %>% 
+    subset(nchar(gsub("[^ ]", "", word1)) < 3) %>% 
+    subset(nchar(gsub("[^ ]", "", word2)) < 3)
+
+
+
+bigrams_filtered <- bigrams_separated %>%
+    filter(!word1 %in% stop_words$word) %>%
+    filter(!word2 %in% stop_words$word)
+
+bigrams_filtered
+
+```
+
+Count the most common bigrams.(10 points)
+
+```{r}
+bigram_counts <- bigrams_filtered %>% 
+  count(word1, word2, sort = TRUE)
+
+bigram_counts
+
+```
+
+Step 5: The bigrams are separated into (2) columns, one word each. Word1 and word2 columns are filtered to remove all stop words. 
+A count of words in both columns are conducted and sorted in a decreasing manner. This shows the number of times the words are present.
+
+
+6.	Load the package igraph: 
+```{r, message=FALSE, warning=FALSE}
+library(igraph)
+```
+
+
+Step 6:  A graphing package is loaded. 
+
+7.	Use the output from step 5 and build a network of common bigrams [filter for only relatively common combinations (based on n – use lines instead of directed arrows between nodes (graph_from_data_frame (directed = FALSE))]. (10 points)
+
+```{r}
+# filter for only relatively common combinations
+bigram_graph <- bigram_counts %>%
+    filter(n > 20) %>%
+    graph_from_data_frame((directed = FALSE))
+
+bigram_graph
+
+```
+
+Step 7: We filter the words for the most common by accepting words that apperaed more than 20 times throughout the reviews. 
+
+
+8. Load the package ggraph
+```{r}
+library(ggraph)
+```
+
+Step 8: We load the graphing package for the next step. 
+
+
+9. Visualize the graph - Use the Fruchterman-Reingold to visualize the nodes and ties (“fr”). Apply some polishing operations to make a better looking graph. 
++ add the edge_alpha aesthetic to the link layer to make links transparent based on how common or rare the bigram is
++ add the edge_width aesthetic to the link layer to show the weight of the ties between bigrams
++ add a theme that’s useful for plotting networks, theme_void()
+
+```{r}
+set.seed(2017)
+
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n, edge_width = n), show.legend = FALSE,edge_colour = "cyan4") +
+  geom_node_point(size = 1) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+
+```
+
+Step 9: We first set our seed for replication purposes and visualize the network graph without arrows. 
+
+
+10. Explain the results. Reflect on this assignment and provide a summary of your findings. (20 points)
+
+Step 10: The graph shows the most common bigrams in the Reviews data set. The words shown occur at least 20 times, and were not stop words. 
+IN the reviews, 'highly recommend' is commonly used for proposed products. Once we cleaned and visualized the bigrams, it is clear to see the most common words were sectioned based on skin, hair, and even review words like 'free', and 'prone'.
