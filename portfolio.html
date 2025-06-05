@@ -1,169 +1,439 @@
-<ul class="project-list">
+<!DOCTYPE html>
+<html lang="en">
 
-  <li class="project-item active" data-filter-item data-category="web development">
-    <a href="projects/project-form-automation.html">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zachary Petrea - Portfolio</title>
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Zachary Petrea">Zachary Petrea</h1>
+
+          <p class="title">Data Specialist & PM Professional</p>
         </div>
 
-        <img src="./assets/images/project-1.jpg" alt="Form Automation" loading="lazy">
-      </figure>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
 
-      <h3 class="project-title">Form Automation</h3>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
 
-      <p class="project-category">Web/App Development</p>
+      </div>
 
-    </a>
-  </li>
+      <div class="sidebar-info_more">
 
-  <li class="project-item active" data-filter-item data-category="project management">
-    <a href="projects/project-process-optimization.html">
+        <div class="separator"></div>
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+        <ul class="contacts-list">
 
-        <img src="./assets/images/project-2.jpg" alt="Process Optimization" loading="lazy">
-      </figure>
+          <li class="contact-item">
 
-      <h3 class="project-title">Process Optimization</h3>
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
 
-      <p class="project-category">Project Management</p>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
 
-    </a>
-  </li>
+              <a href="mailto:richard@example.com" class="contact-link">zpetrea1@gmail.com</a>
+            </div>
 
-  <li class="project-item active" data-filter-item data-category="analytics">
-    <a href="projects/project-sentiment-analysis.html">
+          </li>
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+          <li class="contact-item">
 
-        <img src="./assets/images/project-3.jpg" alt="Sentiment Analysis" loading="lazy">
-      </figure>
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
 
-      <h3 class="project-title">Sentiment Analysis</h3>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
 
-      <p class="project-category">Analytics</p>
+              <a href="tel:+12133522795" class="contact-link">+1 (828) 962-1905</a>
+            </div>
 
-    </a>
-  </li>
+          </li>
 
-  <li class="project-item active" data-filter-item data-category="web/app design">
-    <a href="projects/project-dashboard-development.html">
+          <li class="contact-item">
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
 
-        <img src="./assets/images/project-4.jpg" alt="Dashboard Development" loading="lazy">
-      </figure>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
 
-      <h3 class="project-title">Dashboard Development</h3>
+              <time datetime="1982-06-23">August 25, 1993</time>
+            </div>
 
-      <p class="project-category">Web/App Design</p>
+          </li>
 
-    </a>
-  </li>
+          <li class="contact-item">
 
-  <li class="project-item active" data-filter-item data-category="web/app design">
-    <a href="projects/project-employee-payroll-calculator.html">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
 
-        <img src="./assets/images/project-5.jpg" alt="Employee Payroll Calculator" loading="lazy">
-      </figure>
+              <address>Charlotte, NC, USA</address>
+            </div>
 
-      <h3 class="project-title">Employee Payroll Calculator</h3>
+          </li>
 
-      <p class="project-category">Web/App Design</p>
+        </ul>
 
-    </a>
-  </li>
+        <div class="separator"></div>
 
-  <li class="project-item active" data-filter-item data-category="analytics">
-    <a href="projects/project-integer-linear-programming.html">
+        <ul class="social-list">
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
 
-        <img src="./assets/images/project-6.jpg" alt="Integer/Linear Programming" loading="lazy">
-      </figure>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-LinkedIn"></ion-icon>
+            </a>
+          </li>
 
-      <h3 class="project-title">Integer/Linear Programming</h3>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-Github"></ion-icon>
+            </a>
+          </li>
 
-      <p class="project-category">Analytics</p>
+        </ul>
 
-    </a>
-  </li>
+      </div>
 
-  <li class="project-item active" data-filter-item data-category="web/app design">
-    <a href="projects/project-website-development.html">
+    </aside>
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
 
-        <img src="./assets/images/project-7.jpg" alt="Website Development" loading="lazy">
-      </figure>
 
-      <h3 class="project-title">Website Development</h3>
 
-      <p class="project-category">Web/App Design</p>
 
-    </a>
-  </li>
+    <!--
+      - #main-content
+    -->
 
-  <li class="project-item active" data-filter-item data-category="analytics">
-    <a href="projects/project-inventory-dashboard.html">
+    <div class="main-content">
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+      <!--
+        - #NAVBAR
+      -->
 
-        <img src="./assets/images/project-8.jpg" alt="Inventory Dashboard" loading="lazy">
-      </figure>
+      <nav class="navbar">
+  <ul class="navbar-list">
 
-      <h3 class="project-title">Inventory Dashboard</h3>
+    <li class="navbar-item">
+      <a href="index.html" class="navbar-link">About</a>
+    </li>
 
-      <p class="project-category">Analytics</p>
+    <li class="navbar-item">
+      <a href="resume.html" class="navbar-link">Resume</a>
+    </li>
 
-    </a>
-  </li>
+    <li class="navbar-item">
+      <a href="portfolio.html" class="navbar-link">Portfolio</a>
+    </li>
 
-  <li class="project-item active" data-filter-item data-category="analytics">
-    <a href="projects/project-machine-learning.html">
+    <li class="navbar-item">
+     <a href="contact.html" class="navbar-link">Contact</a>
+    </li>
 
-      <figure class="project-img">
-        <div class="project-item-icon-box">
-          <ion-icon name="eye-outline"></ion-icon>
-        </div>
+  </ul>
+</nav>
 
-        <img src="./assets/images/project-9.jpg" alt="Machine Learning" loading="lazy">
-      </figure>
 
-      <h3 class="project-title">Machine Learning</h3>
+  <!--
+        - #PORTFOLIO
+      -->
+<article class="about  active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
 
-      <p class="project-category">Analytics</p>
+        <section class="projects">
 
-    </a>
-  </li>
+          <ul class="filter-list">
 
-</ul>
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
 
+            <li class="filter-item">
+              <button data-filter-btn>Web/App Design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Analytics</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Project Management</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web/App Design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Analytics</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Project Management</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Form Automation</h3>
+
+                <p class="project-category">Web/App Development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.jpg" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Process Optimization</h3>
+
+                <p class="project-category">Project Management</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Sentiment Analysis</h3>
+
+                <p class="project-category">Analytics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.jpg" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Dashboard Development</h3>
+
+                <p class="project-category">Web/App Design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.jpg" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Employee Payroll Calculator</h3>
+
+                <p class="project-category">Web/App Design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.jpg" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Integer/Linear Programming</h3>
+
+                <p class="project-category">Analytics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.jpg" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Website Development</h3>
+
+                <p class="project-category">Web/App Design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Inventory Dashboard</h3>
+
+                <p class="project-category">Analytics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.jpg" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Machine Learning</h3>
+
+                <p class="project-category">Analytics</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>          
+
+      </main>
+
+ <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         
 </body>
 
