@@ -2,58 +2,44 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zachary Petrea - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title - Zachary Petrea Portfolio</title>
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon" />
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- custom css -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
-<!--
-    - #MAIN
-  -->
-
+  <!-- MAIN -->
   <main>
 
-    <!--
-      - #SIDEBAR
-    -->
-
+    <!-- SIDEBAR -->
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80">
+          <img src="../assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80" />
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Zachary Petrea">Zachary Petrea</h1>
-
           <p class="title">Data Specialist & PM Professional</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
 
@@ -64,155 +50,149 @@
         <div class="separator"></div>
 
         <ul class="contacts-list">
-
+          <!-- Email -->
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="mailto:richard@example.com" class="contact-link">zpetrea1@gmail.com</a>
+              <a href="mailto:zpetrea1@gmail.com" class="contact-link">zpetrea1@gmail.com</a>
             </div>
-
           </li>
 
+          <!-- Phone -->
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
-              <a href="tel:+12133522795" class="contact-link">+1 (828) 962-1905</a>
+              <a href="tel:+18289621905" class="contact-link">+1 (828) 962-1905</a>
             </div>
-
           </li>
 
+          <!-- Birthday -->
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">August 25, 1993</time>
+              <time datetime="1993-08-25">August 25, 1993</time>
             </div>
-
           </li>
 
+          <!-- Location -->
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
               <address>Charlotte, NC, USA</address>
             </div>
-
           </li>
-
         </ul>
 
         <div class="separator"></div>
 
+        <!-- Social -->
         <ul class="social-list">
-
           <li class="social-item">
             <a href="#" class="social-link">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
             <a href="#" class="social-link">
-              <ion-icon name="logo-LinkedIn"></ion-icon>
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
             <a href="#" class="social-link">
-              <ion-icon name="logo-Github"></ion-icon>
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
-
         </ul>
 
       </div>
 
     </aside>
 
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
+    <!-- MAIN CONTENT -->
     <div class="main-content">
 
-      <!--
-        - #NAVBAR
-      -->
-
+      <!-- NAVBAR -->
       <nav class="navbar">
-  <ul class="navbar-list">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link" data-nav-link>About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../resume.html" class="navbar-link" data-nav-link>Resume</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../contact.html" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-    <li class="navbar-item">
-      <a href="index.html" class="navbar-link">About</a>
-    </li>
+      <!-- PROJECT ARTICLE -->
+      <article class="about active" data-page="about">
 
-    <li class="navbar-item">
-      <a href="resume.html" class="navbar-link">Resume</a>
-    </li>
-
-    <li class="navbar-item">
-      <a href="portfolio.html" class="navbar-link">Portfolio</a>
-    </li>
-
-    <li class="navbar-item">
-     <a href="contact.html" class="navbar-link">Contact</a>
-    </li>
-
-  </ul>
-</nav>
-
-
-  <!--
-        - #PORTFOLIO
-      -->
-<article class="about  active" data-page="about">
         <header>
-          <h2 class="h2 article-title"> Employee Payroll Calculator</h2>
+          <h2 class="h2 article-title">Employee Payroll Calculator</h2>
         </header>
 
+        <!-- Project content starts here -->
 
+        <section class="about-text">
+          <p>
+            This is your project description. You can add paragraphs, images, code samples, etc.
+          </p>
 
-      </article>          
+          <p>
+            Example of adding an image:
+          </p>
 
-      </main>
+          <img src="../assets/images/project-1.jpg" alt="Project Image" style="max-width: 100%; border-radius: 12px; margin: 15px 0;" />
 
- <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+          <p>
+            Example of adding code (you can style this later):
+          </p>
 
-  <!--
-    - ionicon link
-  -->
+          <pre style="background-color: #1e1e1e; color: #ffffff; padding: 12px; border-radius: 8px;">
+<code>
+# Example Python code
+def hello_world():
+    print("Hello, World!")
+</code>
+          </pre>
+
+          <p>
+            Example of a download link:
+          </p>
+
+          <a href="../assets/files/YourFile.pdf" download style="color: var(--orange-yellow-crayola);">Download Project PDF</a>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- custom js -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- ionicon -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        
-</body>
 
+</body>
 </html>
