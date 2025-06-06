@@ -157,3 +157,33 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// Dynamic project loader
+document.querySelectorAll('.project-link').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const projectUrl = this.getAttribute('href');
+
+    // Fetch project HTML
+    fetch(projectUrl)
+      .then(response => response.text())
+      .then(data => {
+        // Parse the fetched HTML
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(data, 'text/html');
+        const projectArticle = htmlDoc.querySelector('article.about');
+
+        // Replace current main article
+        const mainContent = document.querySelector('.main-content');
+        const oldArticle = mainContent.querySelector('article.about');
+        if (oldArticle) oldArticle.remove();
+
+        mainContent.appendChild(projectArticle);
+        window.scrollTo(0, 0); // Scroll to top
+      })
+      .catch(error => {
+        console.error('Error loading project:', error);
+      });
+  });
+});
