@@ -1730,6 +1730,15 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
+	/* Dynamic project article style */
+article.about.active {
+  min-height: 100%;
+  padding: 2rem;
+  background: var(--background-primary);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
 
 
 
