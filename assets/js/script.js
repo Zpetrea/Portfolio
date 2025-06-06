@@ -172,18 +172,20 @@ document.querySelectorAll('.project-link').forEach(link => {
         // Parse the fetched HTML
         const parser = new DOMParser();
         const htmlDoc = parser.parseFromString(data, 'text/html');
-        const projectArticle = htmlDoc.querySelector('article.about');
 
-        // Replace current main article
+        // Load new .main-content from project page
+        const newMainContent = htmlDoc.querySelector('.main-content');
         const mainContent = document.querySelector('.main-content');
-        const oldArticle = mainContent.querySelector('article.about');
-        if (oldArticle) oldArticle.remove();
 
-        mainContent.appendChild(projectArticle);
-        window.scrollTo(0, 0); // Scroll to top
+        // Replace main-content innerHTML
+        if (newMainContent && mainContent) {
+          mainContent.innerHTML = newMainContent.innerHTML;
+          window.scrollTo(0, 0); // Scroll to top
+        }
       })
       .catch(error => {
         console.error('Error loading project:', error);
       });
   });
 });
+
