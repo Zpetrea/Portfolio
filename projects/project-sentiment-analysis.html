@@ -1,79 +1,142 @@
-<article class="about active" data-page="about">
+<!DOCTYPE html>
+<html lang="en">
 
-  <header>
-    <h2 class="h2 article-title">Sentiment Analysis</h2>
-  </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentiment Analysis - Zachary Petrea Portfolio</title>
 
-  <section class="about-text">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon" />
 
-    <!-- Ngrams Block -->
-    <h3 style="margin-bottom: 0.5rem;">Rendered RMarkdown: Ngrams</h3>
+  <!-- custom css -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
-    <div style="
-        background: white;
-        color: black;
-        padding: 1rem;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        margin-bottom: 1rem;
-    ">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
 
-      <iframe src="../assets/files/ngrams-.html"
-          style="
-              width: 100%;
-              height: 600px;
-              border: none;
+<body>
+
+  <main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+      <!-- (same as portfolio.html sidebar content) -->
+      <!-- copy your sidebar HTML here -->
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="../index.html" class="navbar-link">About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../resume.html" class="navbar-link">Resume</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../portfolio.html" class="navbar-link">Portfolio</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../contact.html" class="navbar-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- PROJECT ARTICLE -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">Sentiment Analysis</h2>
+        </header>
+
+        <section class="about-text">
+
+          <!-- Ngrams Block -->
+          <h3 style="margin-bottom: 0.5rem;">Rendered RMarkdown: Ngrams</h3>
+
+          <div style="
               background: white;
-          " loading="lazy">
-      </iframe>
+              color: black;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 0 10px rgba(0,0,0,0.3);
+              margin-bottom: 1rem;
+          ">
+            <iframe src="../assets/files/ngrams-.html"
+                style="
+                    width: 100%;
+                    height: 600px;
+                    border: none;
+                    background: white;
+                " loading="lazy">
+            </iframe>
+          </div>
+
+          <!-- Ngrams Download Links -->
+          <p style="margin-bottom: 2rem;">
+            <strong>Download Files:</strong>
+            <ul>
+              <li><a href="../assets/files/ngrams-.html" download>Download Ngrams HTML</a></li>
+              <li><a href="../assets/files/amazonbeauty_review.csv" download>Download Dataset (CSV)</a></li>
+              <li><a href="../assets/files/Assignment - ngrams .Rmd" download>Download RMarkdown (Rmd)</a></li>
+            </ul>
+          </p>
+
+          <!-- Widyr Block -->
+          <h3 style="margin-bottom: 0.5rem;">Rendered RMarkdown: Widyr</h3>
+
+          <div style="
+              background: white;
+              color: black;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 0 10px rgba(0,0,0,0.3);
+              margin-bottom: 1rem;
+          ">
+            <iframe src="../assets/files/Widyr-.html"
+                style="
+                    width: 100%;
+                    height: 600px;
+                    border: none;
+                    background: white;
+                " loading="lazy">
+            </iframe>
+          </div>
+
+          <!-- Widyr Download Links -->
+          <p>
+            <strong>Download Files:</strong>
+            <ul>
+              <li><a href="../assets/files/Widyr-.html" download>Download Widyr HTML</a></li>
+              <li><a href="../assets/files/amazonbeauty_review.csv" download>Download Dataset (CSV)</a></li>
+              <li><a href="../assets/files/Assignment - Widyr .Rmd" download>Download RMarkdown (Rmd)</a></li>
+            </ul>
+          </p>
+
+        </section>
+
+      </article>
 
     </div>
 
-    <!-- Ngrams Download Links -->
-    <p style="margin-bottom: 2rem;">
-      <strong>Download Files:</strong>
-      <ul>
-        <li><a href="../assets/files/ngrams-.html" download>Download Ngrams HTML</a></li>
-        <li><a href="../assets/files/amazonbeauty_review.csv" download>Download Dataset (CSV)</a></li>
-        <li><a href="../assets/files/Assignment - ngrams .Rmd" download>Download RMarkdown (Rmd)</a></li>
-      </ul>
-    </p>
+  </main>
 
-    <!-- Widyr Block -->
-    <h3 style="margin-bottom: 0.5rem;">Rendered RMarkdown: Widyr</h3>
+  <!-- custom js -->
+  <script src="../assets/js/script.js"></script>
 
-    <div style="
-        background: white;
-        color: black;
-        padding: 1rem;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        margin-bottom: 1rem;
-    ">
+  <!-- ionicon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-      <iframe src="../assets/files/Widyr-.html"
-          style="
-              width: 100%;
-              height: 600px;
-              border: none;
-              background: white;
-          " loading="lazy">
-      </iframe>
-
-    </div>
-
-    <!-- Widyr Download Links -->
-    <p>
-      <strong>Download Files:</strong>
-      <ul>
-        <li><a href="../assets/files/Widyr-.html" download>Download Widyr HTML</a></li>
-        <li><a href="../assets/files/amazonbeauty_review.csv" download>Download Dataset (CSV)</a></li>
-        <li><a href="../assets/files/Assignment - Widyr .Rmd" download>Download RMarkdown (Rmd)</a></li>
-      </ul>
-    </p>
-
-  </section>
-
-</article>
+</body>
+</html>
