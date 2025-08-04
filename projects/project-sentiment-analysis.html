@@ -5,58 +5,84 @@
   </header>
 
   <section class="about-text">
-
     <p>
-      This project demonstrates sentiment analysis using R and tidytext. It includes tokenization, n-gram modeling, and word correlation using `widyr`. Below are the rendered RMarkdown outputs and downloadable project files.
+      This project demonstrates sentiment analysis using R and tidytext. It includes tokenization, n-gram modeling, and word correlation using <code>widyr</code>. Use the tabs below to explore each section of the analysis.
     </p>
 
-    <!-- Ngrams Block -->
-    <h3 class="h3 article-title" style="margin-top: 2rem;">Rendered RMarkdown: Ngrams</h3>
-    <div style="
-      background-color: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-    ">
+    <!-- Tab Controls -->
+    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+      <button class="tab-button active" onclick="showTab('ngrams')">Ngrams</button>
+      <button class="tab-button" onclick="showTab('widyr')">Widyr</button>
+    </div>
+
+    <!-- Ngrams Tab -->
+    <div id="ngrams" class="tab-content" style="margin-bottom: 1.5rem;">
       <iframe src="../assets/files/ngrams-.html" 
               width="100%" 
               height="600" 
               frameborder="0" 
-              style="border-radius: 8px;">
+              style="border-radius: 12px;">
       </iframe>
+
+      <p><strong>Download Files:</strong></p>
+      <ul class="download-list">
+        <li><a href="../assets/files/ngrams-.html" download>📄 Download Ngrams HTML</a></li>
+        <li><a href="../assets/files/amazonbeauty_review.csv" download>📊 Download Dataset (CSV)</a></li>
+        <li><a href="../assets/files/Assignment - ngrams .Rmd" download>📘 Download RMarkdown (Rmd)</a></li>
+      </ul>
     </div>
 
-    <p><strong>Download Files:</strong></p>
-    <ul class="download-list">
-      <li><a href="../assets/files/ngrams-.html" download>📄 Download Ngrams HTML</a></li>
-      <li><a href="../assets/files/amazonbeauty_review.csv" download>📊 Download Dataset (CSV)</a></li>
-      <li><a href="../assets/files/Assignment - ngrams .Rmd" download>📘 Download RMarkdown (Rmd)</a></li>
-    </ul>
-
-    <!-- Widyr Block -->
-    <h3 class="h3 article-title" style="margin-top: 2rem;">Rendered RMarkdown: Widyr</h3>
-    <div style="
-      background-color: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-    ">
+    <!-- Widyr Tab -->
+    <div id="widyr" class="tab-content" style="display: none; margin-bottom: 1.5rem;">
       <iframe src="../assets/files/Widyr-.html" 
               width="100%" 
               height="600" 
               frameborder="0" 
-              style="border-radius: 8px;">
+              style="border-radius: 12px;">
       </iframe>
+
+      <p><strong>Download Files:</strong></p>
+      <ul class="download-list">
+        <li><a href="../assets/files/Widyr-.html" download>📄 Download Widyr HTML</a></li>
+        <li><a href="../assets/files/amazonbeauty_review.csv" download>📊 Download Dataset (CSV)</a></li>
+        <li><a href="../assets/files/Assignment - Widyr .Rmd" download>📘 Download RMarkdown (Rmd)</a></li>
+      </ul>
     </div>
-
-    <p><strong>Download Files:</strong></p>
-    <ul class="download-list">
-      <li><a href="../assets/files/Widyr-.html" download>📄 Download Widyr HTML</a></li>
-      <li><a href="../assets/files/amazonbeauty_review.csv" download>📊 Download Dataset (CSV)</a></li>
-      <li><a href="../assets/files/Assignment - Widyr .Rmd" download>📘 Download RMarkdown (Rmd)</a></li>
-    </ul>
-
   </section>
 </article>
+
+<!-- Tab Script and Styling -->
+<script>
+  function showTab(tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+
+    contents.forEach(el => el.style.display = 'none');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).style.display = 'block';
+    event.target.classList.add('active');
+  }
+</script>
+
+<style>
+  .tab-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--orange-yellow-crayola);
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .tab-button:hover {
+    background-color: #ff9900;
+  }
+
+  .tab-button.active {
+    background-color: #fb8500;
+    color: white;
+  }
+</style>
