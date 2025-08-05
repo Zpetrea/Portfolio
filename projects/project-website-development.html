@@ -163,12 +163,36 @@
 
   <!-- Iframe showing screenshots.html -->
   <iframe
-    src="../assets/pages/screenshots.html"
+    srcdoc='
+      <style>
+        body {
+          margin: 0;
+          padding: 16px;
+          background-color: #111;
+          font-family: sans-serif;
+        }
+        .scroll-container {
+          display: flex;
+          overflow-x: auto;
+          gap: 1rem;
+        }
+        .scroll-container img {
+          height: 400px;
+          width: auto;
+          border-radius: 10px;
+          flex-shrink: 0;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+      </style>
+      <div class="scroll-container">
+        <img src="../assets/images/client-home.png" alt="Home Page">
+        <img src="../assets/images/client-about.png" alt="About Page">
+        <img src="../assets/images/client-contact.png" alt="Contact Page">
+      </div>'
     width="100%"
     height="500"
     frameborder="0"
     style="border-radius: 12px; margin-top: 20px; overflow: auto;"
-    allowfullscreen
   ></iframe>
 
   <!-- Project Info -->
