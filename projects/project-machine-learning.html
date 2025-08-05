@@ -150,36 +150,83 @@
 
         <!-- Project content starts here -->
 
-        <section class="about-text">
-          <p>
-            This is your project description. You can add paragraphs, images, code samples, etc.
-          </p>
+       <section class="about-text">
 
-          <p>
-            Example of adding an image:
-          </p>
+  <style>
+    .project-info {
+      line-height: 1.7;
+    }
 
-          <img src="../assets/images/project-1.jpg" alt="Project Image" style="max-width: 100%; border-radius: 12px; margin: 15px 0;" />
+    .project-info a {
+      color: var(--orange-yellow-crayola);
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-          <p>
-            Example of adding code (you can style this later):
-          </p>
+    .project-info a:hover {
+      text-decoration: underline;
+    }
 
-          <pre style="background-color: #1e1e1e; color: #ffffff; padding: 12px; border-radius: 8px;">
-<code>
-# Example Python code
-def hello_world():
-    print("Hello, World!")
-</code>
-          </pre>
+    .pdf-frame {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
 
-          <p>
-            Example of a download link:
-          </p>
+  <div class="project-info">
+    <p><strong>Project Overview:</strong></p>
+    <p>
+      This machine learning project explores predictive maintenance using a dataset of 26,570 samples with 26 features, including sensor measurements, product codes, and categorical attributes. The goal was to predict whether a product would fail during quality inspection.
+    </p>
 
-          <a href="../assets/files/YourFile.pdf" download style="color: var(--orange-yellow-crayola);">Download Project PDF</a>
+    <p><strong>Data Summary:</strong></p>
+    <p>
+      The dataset contains a mixture of numerical and categorical features such as:
+      <ul>
+        <li>Sensor measurements (measurement_0 to measurement_17)</li>
+        <li>Product and material identifiers (product_code, attribute_0 to attribute_3)</li>
+        <li>Target variable: <code>failure</code> (Yes/No)</li>
+      </ul>
+      Missing values were common across sensor readings and handled via data cleaning prior to modeling.
+    </p>
 
-        </section>
+    <p><strong>Models Used:</strong></p>
+    <p>
+      Several models were evaluated for binary classification:
+      <ul>
+        <li>Logistic Regression</li>
+        <li>Decision Trees</li>
+        <li>Random Forests</li>
+        <li>Gradient Boosting (optional depending on additional steps)</li>
+      </ul>
+      Feature selection, correlation analysis, and data transformation were performed to enhance performance.
+    </p>
+
+    <p><strong>Key Findings:</strong></p>
+    <p>
+      <ul>
+        <li>Sensor features like <code>measurement_17</code>, <code>measurement_5</code>, and <code>measurement_16</code> had strong correlations with failure.</li>
+        <li>Random Forests provided robust performance, handling missing data and feature interactions well.</li>
+        <li>Visualizations such as boxplots and histograms showed clear differences between failed and non-failed items across specific measurements.</li>
+        <li>Standardization and long-format reshaping improved EDA and model interpretability.</li>
+      </ul>
+    </p>
+
+    <p>You can view the full report below:</p>
+  </div>
+
+  <!-- Embedded PDF Report -->
+  <iframe
+    src="../assets/files/Copy of Project-Phase-I.docx.pdf"
+    class="pdf-frame"
+  ></iframe>
+
+</section>
+
 
       </article>
 
