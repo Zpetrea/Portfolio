@@ -145,26 +145,8 @@
       <section class="about-text">
 
   <style>
-    .screenshot-container {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 1rem 0;
-      margin-bottom: 1rem;
-      scroll-behavior: smooth;
-    }
-
-    .screenshot-container img {
-      height: 200px;
-      width: auto;
-      object-fit: contain;
-      display: inline-block;
-      margin-right: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
     .project-info {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       line-height: 1.7;
     }
 
@@ -179,12 +161,15 @@
     }
   </style>
 
-  <!-- Scrollable Screenshots -->
-  <div class="screenshot-container">
-    <img src="../assets/images/client-home.png" alt="Homepage" />
-    <img src="../assets/images/client-about.png" alt="About Page" />
-    <img src="../assets/images/client-contact.png" alt="Contact Page" />
-  </div>
+  <!-- Iframe showing screenshots.html -->
+  <iframe
+    src="../assets/pages/screenshots.html"
+    width="100%"
+    height="500"
+    frameborder="0"
+    style="border-radius: 12px; margin-top: 20px; overflow: auto;"
+    allowfullscreen
+  ></iframe>
 
   <!-- Project Info -->
   <div class="project-info">
@@ -202,7 +187,9 @@
       <a href="../assets/files/PricingSteps1.pdf" download>Download Project Brief (PDF)</a>
     </p>
   </div>
+
 </section>
+
 
 
 
