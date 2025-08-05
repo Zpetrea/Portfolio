@@ -146,10 +146,10 @@
 
   <style>
     .screenshot-container {
-      display: flex;
       overflow-x: auto;
-      gap: 1rem;
+      white-space: nowrap;
       padding: 1rem 0;
+      margin-bottom: 1rem;
       scroll-behavior: smooth;
     }
 
@@ -157,19 +157,21 @@
       height: 200px;
       width: auto;
       object-fit: contain;
+      display: inline-block;
+      margin-right: 1rem;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      flex-shrink: 0;
     }
 
     .project-info {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       line-height: 1.7;
     }
 
     .project-info a {
       color: var(--orange-yellow-crayola);
       font-weight: 600;
+      text-decoration: none;
     }
 
     .project-info a:hover {
@@ -201,6 +203,7 @@
     </p>
   </div>
 </section>
+
 
 
       </article>
