@@ -142,37 +142,66 @@
       </nav>
 
       <!-- PROJECT ARTICLE -->
-      <article class="about active" data-page="about">
-        <header>
-          <h2 class="h2 article-title">Website Development</h2>
-        </header>
+      <section class="about-text">
 
-        <section class="about-text">
+  <style>
+    .screenshot-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem 0;
+      scroll-behavior: smooth;
+    }
 
-          <!-- Scrollable Screenshots -->
-          <div class="screenshot-container">
-            <img src="../assets/images/client-home.png" alt="Homepage" />
-            <img src="../assets/images/client-about.png" alt="About Page" />
-            <img src="../assets/images/client-contact.png" alt="Contact Page" />
-          </div>
+    .screenshot-container img {
+      height: 200px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+    }
 
-          <!-- Project Info -->
-          <div class="project-info">
-            <p><strong>Role:</strong> Full-Stack Developer</p>
-            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, React, Node.js, Express</p>
-            <p>
-              I built a modern, responsive website for <em>Client Name</em> that showcases their services,
-              includes a contact form and is optimized for performance and SEO. This project demonstrates my ability
-              to create a full-stack solution with attention to detail and user experience.
-            </p>
-            <p>
-              <a href="https://www.cleancutterslandscaping.com" target="_blank">Visit Live Website</a>
-            </p>
-            <p>
-              <a href="../assets/files/PricingSteps1.pdf" download>Download Project Brief (PDF)</a>
-            </p>
-          </div>
-        </section>
+    .project-info {
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .project-info a {
+      color: var(--orange-yellow-crayola);
+      font-weight: 600;
+    }
+
+    .project-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Scrollable Screenshots -->
+  <div class="screenshot-container">
+    <img src="../assets/images/client-home.png" alt="Homepage" />
+    <img src="../assets/images/client-about.png" alt="About Page" />
+    <img src="../assets/images/client-contact.png" alt="Contact Page" />
+  </div>
+
+  <!-- Project Info -->
+  <div class="project-info">
+    <p><strong>Role:</strong> Full-Stack Developer</p>
+    <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, React, Node.js, Express</p>
+    <p>
+      I built a modern, responsive website for <em>Clean Cutters Landscaping</em> that showcases their services,
+      includes a contact form, and is optimized for performance and SEO. This project demonstrates my ability
+      to create a full-stack solution with attention to detail and user experience.
+    </p>
+    <p>
+      <a href="https://www.cleancutterslandscaping.com" target="_blank">Visit Live Website</a>
+    </p>
+    <p>
+      <a href="../assets/files/PricingSteps1.pdf" download>Download Project Brief (PDF)</a>
+    </p>
+  </div>
+</section>
+
 
       </article>
 
