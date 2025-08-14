@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Churn ML - Zachary Petrea Portfolio</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon" />
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="../assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80" />
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Zachary Petrea">Zachary Petrea</h1>
+          <p class="title">Data Specialist & PM Professional</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:zpetrea1@gmail.com" class="contact-link">zpetrea1@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+18289621905" class="contact-link">+1 (828) 962-1905</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="1993-08-25">August 25, 1993</time>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Charlotte, NC, USA</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="../index.html" class="navbar-link" data-nav-link>About</a></li>
+          <li class="navbar-item"><a href="../resume.html" class="navbar-link" data-nav-link>Resume</a></li>
+          <li class="navbar-item"><a href="../portfolio.html" class="navbar-link" data-nav-link>Portfolio</a></li>
+          <li class="navbar-item"><a href="../contact.html" class="navbar-link" data-nav-link>Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- PROJECT ARTICLE -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">Customer Churn: End-to-End ML (API + SHAP + Demo)</h2>
+        </header>
+
+        <section class="about-text">
+
+          <style>
+            .project-info { line-height: 1.7; }
+            .project-info a { color: var(--orange-yellow-crayola); font-weight: 600; text-decoration: none; }
+            .project-info a:hover { text-decoration: underline; }
+            .iframe-wrapper { margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+            .embed-demo { width: 100%; height: 640px; border: none; }
+            .btn-row { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+            .badge { display: inline-block; background: var(--jet); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-right: 6px; }
+          </style>
+
+          <div class="project-info">
+            <p><strong>Project Overview:</strong></p>
+            <p>
+              An end-to-end churn prediction pipeline using <strong>scikit-learn</strong> with a feature
+              <code>ColumnTransformer</code>, model training, and <strong>explainability</strong> via SHAP. The model is
+              exposed through a <strong>FastAPI</strong> endpoint and a <strong>Gradio</strong> web UI. The repo includes
+              tests, CI, and containerization for reproducible deployment.
+            </p>
+
+            <p><strong>Highlights:</strong></p>
+            <ul>
+              <li>Feature engineering with <code>ColumnTransformer</code> + saved preprocessing pipeline</li>
+              <li>Binary classifier with calibration and ROC/PR curves</li>
+              <li>SHAP explanations for feature importance & local explanations</li>
+              <li><strong>FastAPI</strong> JSON endpoint + <strong>Gradio</strong> interactive UI</li>
+              <li>Dockerfile, <code>requirements.txt</code>, and GitHub Actions CI</li>
+            </ul>
+
+            <p><strong>Tech Stack:</strong></p>
+            <p>
+              <span class="badge">Python</span>
+              <span class="badge">scikit-learn</span>
+              <span class="badge">SHAP</span>
+              <span class="badge">FastAPI</span>
+              <span class="badge">Gradio</span>
+              <span class="badge">Docker</span>
+            </p>
+
+            <div class="btn-row">
+              <a class="contact-link" href="https://github.com/YOUR_GH_USERNAME/churn-ml" target="_blank">View Code ↗</a>
+              <a class="contact-link" href="https://huggingface.co/spaces/YOUR_HF_USERNAME/churn-ml" target="_blank">Live Demo ↗</a>
+            </div>
+
+            <p style="margin-top:12px;"><strong>Live Demo (embedded):</strong></p>
+          </div>
+
+          <div class="iframe-wrapper">
+            <iframe
+              class="embed-demo"
+              src="https://huggingface.co/spaces/YOUR_HF_USERNAME/churn-ml?embed=true"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- custom js -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- ionicon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
