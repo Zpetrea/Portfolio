@@ -21,34 +21,25 @@
 
 <body>
 
-  <!-- MAIN -->
   <main>
-
     <!-- SIDEBAR -->
     <aside class="sidebar" data-sidebar>
-
       <div class="sidebar-info">
-
         <figure class="avatar-box">
           <img src="../assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80" />
         </figure>
-
         <div class="info-content">
           <h1 class="name" title="Zachary Petrea">Zachary Petrea</h1>
           <p class="title">Data Specialist & PM Professional</p>
         </div>
-
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>
-
       </div>
 
       <div class="sidebar-info_more">
-
         <div class="separator"></div>
-
         <ul class="contacts-list">
           <li class="contact-item">
             <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
@@ -89,7 +80,6 @@
         </ul>
 
       </div>
-
     </aside>
 
     <!-- MAIN CONTENT -->
@@ -109,7 +99,7 @@
       <article class="about active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">Customer Churn: End-to-End ML (API + SHAP + Demo)</h2>
+          <h2 class="h2 article-title">Customer Churn: End-to-End ML (Forecasts, Segments, What-If)</h2>
         </header>
 
         <section class="about-text">
@@ -118,62 +108,89 @@
             .project-info { line-height: 1.7; }
             .project-info a { color: var(--orange-yellow-crayola); font-weight: 600; text-decoration: none; }
             .project-info a:hover { text-decoration: underline; }
+            .badge { display: inline-block; background: var(--jet); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-right: 6px; }
+
             .iframe-wrapper { margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
             .embed-demo { width: 100%; height: 640px; border: none; }
-            .btn-row { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
-            .badge { display: inline-block; background: var(--jet); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-right: 6px; }
+
+            .gallery { margin-top: 20px; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+            .shot { background: var(--eerie-black-2); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+            .shot img { width: 100%; height: auto; display: block; }
+            .shot figcaption { padding: 8px 10px; font-size: 0.9rem; color: var(--light-gray); }
+            @media (max-width: 520px) { .embed-demo { height: 520px; } }
           </style>
 
           <div class="project-info">
-            <p><strong>Project Overview:</strong></p>
+            <p><strong>Project Overview</strong></p>
             <p>
-              An end-to-end churn prediction pipeline using <strong>scikit-learn</strong> with a feature
-              <code>ColumnTransformer</code>, model training, and <strong>explainability</strong> via SHAP. The model is
-              exposed through a <strong>FastAPI</strong> endpoint and a <strong>Gradio</strong> web UI. The repo includes
-              tests, CI, and containerization for reproducible deployment.
+              Interactive churn prediction built with <strong>scikit-learn</strong> and <strong>Gradio</strong>.
+              The app predicts current churn risk, provides <strong>3- and 6-month forecasts</strong>,
+              segments customers (Low/Medium/High), and includes a <strong>What-If simulator</strong>
+              to test discounts or contract changes. Global feature importance is visualized with <strong>SHAP</strong>.
             </p>
 
-            <p><strong>Highlights:</strong></p>
+            <p><strong>Highlights</strong></p>
             <ul>
-              <li>Feature engineering with <code>ColumnTransformer</code> + saved preprocessing pipeline</li>
-              <li>Binary classifier with calibration and ROC/PR curves</li>
-              <li>SHAP explanations for feature importance & local explanations</li>
-              <li><strong>FastAPI</strong> JSON endpoint + <strong>Gradio</strong> interactive UI</li>
-              <li>Dockerfile, <code>requirements.txt</code>, and GitHub Actions CI</li>
+              <li>Preprocessing with <code>ColumnTransformer</code> (one-hot + scaling)</li>
+              <li>Calibrated classifier (reliable probabilities) and ROC-AUC reporting</li>
+              <li>Risk segmentation and future probability forecasts (3/6 months)</li>
+              <li>What-If retention simulator (e.g., 10–50% discount, 1-/2-year contracts)</li>
+              <li>Explainability via SHAP (global feature importance)</li>
             </ul>
 
-            <p><strong>Tech Stack:</strong></p>
-            <p>
+            <p><strong>Tech Stack</strong><br/>
               <span class="badge">Python</span>
               <span class="badge">scikit-learn</span>
               <span class="badge">SHAP</span>
-              <span class="badge">FastAPI</span>
               <span class="badge">Gradio</span>
-              <span class="badge">Docker</span>
+              <span class="badge">Pandas</span>
             </p>
 
-            <div class="btn-row">
-              <a class="contact-link" href="https://github.com/YOUR_GH_USERNAME/churn-ml" target="_blank">View Code ↗</a>
-              <a class="contact-link" href="https://huggingface.co/spaces/YOUR_HF_USERNAME/churn-ml" target="_blank">Live Demo ↗</a>
+            <div class="btn-row" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="contact-link" href="https://github.com/Zpetrea/AI-Powered_Customer_Churn_Prediction_Retention_Simulator" target="_blank">View Code ↗</a>
+              <a class="contact-link" href="https://huggingface.co/spaces/zpetrea/AI-Powered_Customer_Churn_Prediction_Retention_Simulator" target="_blank">Live Demo ↗</a>
             </div>
 
-            <p style="margin-top:12px;"><strong>Live Demo (embedded):</strong></p>
+            <p style="margin-top:12px;"><strong>Live Demo (embedded)</strong></p>
           </div>
 
+          <!-- Embedded HF Space -->
           <div class="iframe-wrapper">
             <iframe
               class="embed-demo"
-              src="https://huggingface.co/spaces/YOUR_HF_USERNAME/churn-ml?embed=true"
+              src="https://huggingface.co/spaces/zpetrea/AI-Powered_Customer_Churn_Prediction_Retention_Simulator?embed=true"
               allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer"
             ></iframe>
+          </div>
+
+          <!-- Image Gallery -->
+          <div class="project-info">
+            <p style="margin-top:18px;"><strong>Model Evidence & Screens</strong></p>
+          </div>
+
+          <div class="gallery">
+            <figure class="shot">
+              <img src="../assets/images/forecast_example.png" alt="Line chart of churn probability at 0, 3, and 6 months" loading="lazy" />
+              <figcaption>Churn Probability Forecast (0 → 3 → 6 months)</figcaption>
+            </figure>
+
+            <figure class="shot">
+              <img src="../assets/images/whatif_curve.png" alt="Curve of churn probability vs discount percent" loading="lazy" />
+              <figcaption>What-If: Discount vs. Churn Probability</figcaption>
+            </figure>
+
+            <figure class="shot">
+              <img src="../assets/images/shap_summary.png" alt="SHAP summary plot of global feature importance" loading="lazy" />
+              <figcaption>Global Feature Importance (SHAP)</figcaption>
+            </figure>
           </div>
 
         </section>
 
       </article>
-
     </div>
-
   </main>
 
   <!-- custom js -->
