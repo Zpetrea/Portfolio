@@ -1,33 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV Transfer Learning + ONNX - Zachary Petrea Portfolio</title>
-  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recyclables Detector (YOLOv8) – Zachary Petrea</title>
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+
+  <!-- Fonts (optional, matches your site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --card-bg: #1e1e1f;
+      --card-shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 14px;
+    }
+    .project-info { line-height: 1.7; }
+    .project-info a { color: var(--orange-yellow-crayola); font-weight: 600; text-decoration: none; }
+    .project-info a:hover { text-decoration: underline; }
+    .badge { display:inline-block; background:var(--jet); color:#fff; padding:4px 8px; border-radius:6px; font-size:12px; margin-right:6px; }
+    .iframe-card {
+      margin-top: 20px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+    /* Responsive iframe: maintains a 16:9 area that scales */
+    .iframe-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+    }
+    .embed-demo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .help {
+      margin-top: 24px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .help h3 { margin: 0 0 10px; }
+    .help ul { margin: 0; padding-left: 18px; }
+    .help li { margin-bottom: 8px; }
+    .tip { opacity:.9; font-size: .95rem; }
+  </style>
 </head>
 
 <body>
   <main>
+    <!-- Your existing sidebar/nav layout -->
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
-        <figure class="avatar-box"><img src="../assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80" /></figure>
-        <div class="info-content"><h1 class="name" title="Zachary Petrea">Zachary Petrea</h1><p class="title">Data Specialist & PM Professional</p></div>
-        <button class="info_more-btn" data-sidebar-btn><span>Show Contacts</span><ion-icon name="chevron-down"></ion-icon></button>
+        <figure class="avatar-box"><img src="../assets/images/profile.jpg.JPG" alt="Zachary Petrea" width="80"/></figure>
+        <div class="info-content">
+          <h1 class="name" title="Zachary Petrea">Zachary Petrea</h1>
+          <p class="title">Data Specialist & PM Professional</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
       </div>
       <div class="sidebar-info_more">
         <div class="separator"></div>
         <ul class="contacts-list">
-          <li class="contact-item"><div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div><div class="contact-info"><p class="contact-title">Email</p><a href="mailto:zpetrea1@gmail.com" class="contact-link">zpetrea1@gmail.com</a></div></li>
-          <li class="contact-item"><div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div><div class="contact-info"><p class="contact-title">Phone</p><a href="tel:+18289621905" class="contact-link">+1 (828) 962-1905</a></div></li>
-          <li class="contact-item"><div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div><div class="contact-info"><p class="contact-title">Birthday</p><time datetime="1993-08-25">August 25, 1993</time></div></li>
-          <li class="contact-item"><div class="icon-box"><ion-icon name="location-outline"></ion-icon></div><div class="contact-info"><p class="contact-title">Location</p><address>Charlotte, NC, USA</address></div></li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:zpetrea1@gmail.com" class="contact-link">zpetrea1@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+18289621905" class="contact-link">+1 (828) 962-1905</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="1993-08-25">August 25, 1993</time>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Charlotte, NC, USA</address>
+            </div>
+          </li>
         </ul>
         <div class="separator"></div>
         <ul class="social-list">
@@ -49,61 +122,113 @@
       </nav>
 
       <article class="about active" data-page="about">
-        <header><h2 class="h2 article-title">Computer Vision Transfer Learning + ONNX Runtime</h2></header>
+        <header><h2 class="h2 article-title">Recyclables Object Detection (YOLOv8)</h2></header>
 
         <section class="about-text">
-          <style>
-            .project-info { line-height: 1.7; }
-            .project-info a { color: var(--orange-yellow-crayola); font-weight: 600; text-decoration: none; }
-            .project-info a:hover { text-decoration: underline; }
-            .iframe-wrapper { margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
-            .embed-demo { width: 100%; height: 640px; border: none; }
-            .badge { display:inline-block;background:var(--jet);color:#fff;padding:4px 8px;border-radius:6px;font-size:12px;margin-right:6px; }
-          </style>
-
           <div class="project-info">
-            <p><strong>Project Overview:</strong></p>
+            <p><strong>Project Overview</strong></p>
             <p>
-              Fine-tuned a pretrained <strong>ResNet50</strong> on a small, class-balanced dataset, exported to
-              <strong>ONNX</strong>, and served CPU-accelerated inference via <strong>ONNX Runtime</strong>. Includes
-              an interactive <strong>Gradio</strong> image classifier for quick experimentation.
+              This demo uses a fine-tuned <strong>YOLOv8</strong> detector to localize and label waste items
+              (e.g., bottle, can, paper, plastic bag) and optionally map them to bins like <em>Recycle</em> or <em>Landfill</em>.
+              The model you see running here is the same one used in my experiments; it’s packaged in a
+              <strong>Hugging Face Space</strong> and embedded below with an interactive <strong>Gradio</strong> UI.
             </p>
 
-            <p><strong>Highlights:</strong></p>
+            <p><strong>Tech Stack</strong></p>
+            <p>
+              <span class="badge">Ultralytics YOLOv8</span>
+              <span class="badge">PyTorch</span>
+              <span class="badge">Gradio</span>
+              <span class="badge">Hugging Face Spaces</span>
+            </p>
+
+            <p class="tip">
+              Try dropping in your own photo. Use the sliders to balance between <em>recall</em> (finding more items)
+              and <em>precision</em> (fewer false positives).
+            </p>
+          </div>
+
+          <!-- EMBEDDED LIVE DEMO -->
+          <div class="iframe-card">
+            <div class="iframe-wrap">
+              <!-- If your Space uses custom paths, append them; `?embed=true` optimizes the UI for iframes -->
+              <iframe
+                class="embed-demo"
+                src="https://zpetrea-deep-learning.hf.space/?embed=true"
+                title="Recyclables Detector – Live Demo"
+                allow="clipboard-write; fullscreen"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- HOW TO USE / CONTROLS -->
+          <div class="help">
+            <h3>How to use</h3>
             <ul>
-              <li>Transfer learning with frozen backbone + unfrozen head</li>
-              <li>Export to <code>.onnx</code> and benchmark with ONNX Runtime</li>
-              <li>Reproducible training notebook + inference script</li>
-              <li>Gradio UI for drag-and-drop predictions</li>
+              <li><strong>Upload</strong> or drag an image into the widget.</li>
+              <li>Click <strong>Analyze</strong> (or it may auto-run) to get detections with bounding boxes & labels.</li>
+              <li>Tune the sliders if you want different behavior (see below).</li>
             </ul>
 
-            <p><strong>Tech Stack:</strong></p>
-            <p>
-              <span class="badge">PyTorch</span>
-              <span class="badge">ONNX</span>
-              <span class="badge">ONNX Runtime</span>
-              <span class="badge">Gradio</span>
-            </p>
+            <h3>What the sliders/scales do</h3>
+            <ul>
+              <li>
+                <strong>Confidence Threshold</strong>  
+                Minimum model confidence for a detection to be kept.  
+                Lower = more boxes (higher recall, more false positives).  
+                Higher = fewer boxes (higher precision, may miss items).  
+                <em>Try 0.35–0.55 for general photos.</em>
+              </li>
+              <li>
+                <strong>IoU Threshold (NMS)</strong>  
+                Controls how much overlap is allowed between boxes after Non-Maximum Suppression.  
+                Lower (e.g., 0.35–0.45) removes more overlapping boxes (aggressive).  
+                Higher (e.g., 0.5–0.6) allows more overlaps (useful for crowded scenes).
+              </li>
+              <li>
+                <strong>Image Size</strong>  
+                Resize used at inference (e.g., 640).  
+                Larger sizes can catch smaller objects but are slower; smaller sizes are faster but may miss tiny items.  
+                <em>Use the same size you trained with for best results.</em>
+              </li>
+              <li>
+                <strong>Max Detections</strong>  
+                Upper bound on the number of boxes returned.  
+                If you’re getting many small false positives, lowering this can help tidy results.
+              </li>
+              <li>
+                <strong>Class Filter (optional)</strong>  
+                Limit predictions to specific classes (e.g., only bottle/can). Handy for focused demos.
+              </li>
+            </ul>
 
-            <p>
-              <a href="https://github.com/YOUR_GH_USERNAME/cv-transfer-onnx" target="_blank">View Code ↗</a> &nbsp;•&nbsp;
-              <a href="https://huggingface.co/spaces/YOUR_HF_USERNAME/cv-transfer-onnx" target="_blank">Live Demo ↗</a>
+            <h3>Label → Bin mapping (optional)</h3>
+            <p class="tip">
+              The detector outputs item labels (e.g., <em>bottle</em>, <em>can</em>, <em>paper</em>). If the Space
+              includes a post-processing step, labels are mapped to bins:
             </p>
-
-            <p><strong>Live Demo (embedded):</strong></p>
+            <ul>
+              <li><strong>Recycle:</strong> bottle, can, cardboard, paper (if clean), some plastics</li>
+              <li><strong>Landfill:</strong> plastic bag/film, food-contaminated paper, mixed/unknown</li>
+            </ul>
+            <p class="tip">
+              If you want this mapping adjusted, I can update the class→bin dictionary directly in the Space.
+            </p>
           </div>
 
-          <div class="iframe-wrapper">
-            <iframe class="embed-demo" src="https://huggingface.co/spaces/YOUR_HF_USERNAME/cv-transfer-onnx?embed=true" allowfullscreen></iframe>
-          </div>
+          <p style="margin-top:18px">
+            <a href="https://zpetrea-deep-learning.hf.space" target="_blank" rel="noopener">Open the demo in a new tab ↗</a>
+          </p>
         </section>
-
       </article>
     </div>
   </main>
 
+  <!-- Your site scripts -->
   <script src="../assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
